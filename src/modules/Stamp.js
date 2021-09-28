@@ -4,9 +4,15 @@ export default class Stamp {
     #isStamped
 
     constructor(name, yearPublished, isStamped) {
-        this.#name = name
-        this.#yearPublished = yearPublished
-        this.#isStamped = isStamped
+        if (typeof name === typeof {}) {
+            this.#name = name.n
+            this.#yearPublished = name.y
+            this.#isStamped = name.s
+        } else {
+            this.#name = name
+            this.#yearPublished = yearPublished
+            this.#isStamped = isStamped
+        }
     }
 
     get name()      {return this.#name}

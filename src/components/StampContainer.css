@@ -1,0 +1,8 @@
+:root {
+    --one-tenth: 9.98vw;
+}
+
+.stamp-container {
+    width: calc(2 * var(--one-tenth));
+    min-width: 9.95vw;
+}
