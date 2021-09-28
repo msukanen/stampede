@@ -1,0 +1,3 @@
+//!       Without the 'key' prop all sorts of shit can go wrong... at least if nesting map().
+
+//! NOTE: due React's rendering pipeline or somesuch, map'ped stuff's 'key' prop is crucial!
