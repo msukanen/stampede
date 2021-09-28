@@ -13,9 +13,9 @@ export const MainWindow = (props) => {
             for (let i=0; i < collection.length; i += numCols)
                 rs.push( collection.slice(i, i+numCols) )
             return rs.map((row, key) => {
-                return <Row key={`row-${key}`} noGutters>{
+                return <Row key={`row-${key}`} className="g-0">{
                         row.map((col, key) => {
-                            return <Col key={`col-${key}`}>
+                            return <Col key={`col-${key}`} style={{border:'2px dotted blue'}}>
                                 <StampContainer key={key} content={col} />
                             </Col>
                         })

@@ -8,8 +8,8 @@ export const StampContainer = (props) => {
     const [content, setContent] = useState(props.content)
     const [showFull, setShowFull] = useState(false)
 
-    return(<Container className="p-0 stamp-container">
-            <Row onClick={() => setShowFull(!showFull)} noGutters><Col>{content.name}</Col></Row>
+    return(<Container className="stamp-container">
+            <Row onClick={() => setShowFull(!showFull)}><Col>{content.name}</Col></Row>
             <Collapse in={showFull}>
                 <Row>
                     <Col><StampData content={content} /></Col>

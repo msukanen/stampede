@@ -33,3 +33,8 @@
 		transform: rotate(360deg);
 	}
 }
+
+.App-side-nav {
+	background-color: gray;
+	padding: 8pt !important;
+}
