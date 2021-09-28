@@ -12,8 +12,8 @@ export const StampContainer = (props) => {
             <Row onClick={() => setShowFull(!showFull)}><Col>{content.name}</Col></Row>
             <Collapse in={showFull}>
                 <Row>
-                    <Col><StampData content={content} /></Col>
                     <Col><StampImg src={content.src} /></Col>
+                    <Col><StampData content={content} /></Col>
                 </Row>
             </Collapse>
         </Container>
