@@ -10,3 +10,5 @@ export const StampData = (props) => {
         {stamped && <>&mdash; stamped</>}
     </div>)
 }
+
+export default StampData

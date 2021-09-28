@@ -1,8 +1,4 @@
-:root {
-    --one-tenth: 9.98vw;
-}
-
 .stamp-container {
-    width: calc(2 * var(--one-tenth));
-    min-width: 9.95vw;
+    border: 1px solid black;
+    border-radius: 0 0 10pt 0;
 }
