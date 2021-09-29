@@ -8,6 +8,7 @@ export const StampData = (props) => {
     const [stamped] = useState(props.content.stamped)
     const [price]   = useState(props.content.price)
     const [country] = useState(props.content.country)
+    const [sid]     = useState(props.content.sid)
 
     return(<Container className="stamp-data p-0">
         <Row className="g-0 stamp-data-title">

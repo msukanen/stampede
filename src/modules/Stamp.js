@@ -5,8 +5,9 @@ export default class Stamp {
     #price
     #country
     #src
+    #sid
 
-    constructor(nameOrObject, yearPublished, isStamped, price, country, src) {
+    constructor(nameOrObject, sid, yearPublished, isStamped, price, country, src) {
         if (typeof nameOrObject === typeof {}) {
             this.#name = nameOrObject.n
             this.#yearPublished = nameOrObject.y
@@ -14,6 +15,7 @@ export default class Stamp {
             this.#price = nameOrObject.p
             this.#country = nameOrObject.c
             this.#src = nameOrObject.src
+            this.#sid = nameOrObject.sid
         } else {
             this.#name = nameOrObject
             this.#yearPublished = yearPublished
@@ -21,6 +23,7 @@ export default class Stamp {
             this.#price = price
             this.#country = country
             this.#src = src
+            this.#sid = sid
         }
     }
 
@@ -30,4 +33,5 @@ export default class Stamp {
     get price()     {return this.#price}
     get country()   {return this.#country}
     get src()       {return this.#src}
+    get sid()       {return this.#sid}
 }

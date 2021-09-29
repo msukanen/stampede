@@ -13,3 +13,7 @@ export function stampCollection() {
         initDataManager( testData )
     return _stampCollection
 }
+
+export function addToCollection(stamp) {
+
+}
