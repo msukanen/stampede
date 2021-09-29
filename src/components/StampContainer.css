@@ -1,4 +1,16 @@
 .stamp-container {
     border: 1px solid black;
-    border-radius: 0 0 10pt 0;
+    border-radius: 0 120pt 120pt 0pt;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: -1px;
+    overflow: hidden;
+    background-color:darkslategray;
+}
+
+.stamp-title {
+    min-height: 20pt;
+    padding-left: 8pt !important;
+    background-color: slategray;
+    cursor: pointer;
 }

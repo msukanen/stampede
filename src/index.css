@@ -5,9 +5,26 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow: hidden;
+	/* hide scrollbar, but keep functionality; IE/Edge/Firefox/etc. */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+/* hide scrollbar, but keep functionality; Chrome/Safari/Opera/etc. */
+body::-webkit-scrollbar {
+	display: none;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* noselect --- https://stackoverflow.com/a/4407335/2787953 */
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed; Chrome, Edge, Opera and Firefox */
 }

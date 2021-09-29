@@ -1,0 +1,10 @@
+.stamp-data-title {
+    background-color: darkgoldenrod;
+    color: black;
+    padding-left: 4pt;
+}
+
+.stamp-data-entry {
+    background-color: coral;
+    padding-left: 8pt;
+}

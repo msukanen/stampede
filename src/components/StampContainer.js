@@ -9,10 +9,10 @@ export const StampContainer = (props) => {
     const [showFull, setShowFull] = useState(false)
 
     return(<Container className="stamp-container">
-            <Row onClick={() => setShowFull(!showFull)}><Col>{content.name}</Col></Row>
+            <Row className="stamp-title g-0 noselect" onClick={() => setShowFull(!showFull)}><Col style={{pointerEvents:'none'}}>{content.name}</Col></Row>
             <Collapse in={showFull}>
-                <Row>
-                    <Col><StampImg src={content.src} /></Col>
+                <Row className="g-0">
+                    <Col xs={4} lg={2}><StampImg src={content.src} /></Col>
                     <Col><StampData content={content} /></Col>
                 </Row>
             </Collapse>

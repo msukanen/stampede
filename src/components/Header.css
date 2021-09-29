@@ -1,3 +1,9 @@
+.App-header {
+	text-align: center;
+	background-color: #383c44;
+	color: white;
+}
+
 .skewered {
     transform: skew(15deg);
 }

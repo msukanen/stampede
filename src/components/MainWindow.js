@@ -5,7 +5,7 @@ import { Row, Col, Container } from 'react-bootstrap'
 
 export const MainWindow = (props) => {
     const [collection, setCollection] = useState(props.collection)
-    const [numCols, setNumCols] = useState(props.cols ? props.cols : 4)
+    const [numCols, setNumCols] = useState(props.cols ? props.cols : 1)
     
     useEffect(() => {
         console.log(`Cols: ${props.cols}`)
@@ -14,18 +14,18 @@ export const MainWindow = (props) => {
 
     return(<Container fluid className="p-0">
         {collection && (() => {
-            let rs = []
+            let rowSlices = []
             for (let i=0; i < collection.length; i += numCols)
-                rs.push( collection.slice(i, i+numCols) )
+                rowSlices.push( collection.slice(i, i+numCols) )
             //! NOTE: due React's rendering pipeline or somesuch, map'ped stuff's 'key' prop is crucial!
             //!       Without the 'key' prop all sorts of shit can go wrong... at least if nesting map().
             let i = 0
-            return rs.map((row, rkey) => {
-                return <Row key={`row-${rkey}-${numCols}`} className="g-0">{
-                        row.map(col => {
+            return rowSlices.map((rowSlice, rowKey) => {
+                return <Row key={`row-${rowKey}-${numCols}`} className="g-0">{
+                        rowSlice.map(stampObj => {
                             i++
-                            return <Col key={`col-${i}}`} style={{border:'2px dotted blue'}}>
-                                <StampContainer content={col} />
+                            return <Col key={`col-${i}}`}>
+                                <StampContainer content={stampObj} />
                             </Col>
                         })
                 }</Row>
