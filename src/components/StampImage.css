@@ -1,3 +1,7 @@
+:root {
+    --stamp-img-w: 180px;
+}
+
 .stamp-img {
-    width: 10vw;
+    width: var(--stamp-img-w);
 }

@@ -1,13 +1,13 @@
 import './StampData.css'
-import { useState, useEffect } from 'react'
+import { useState, } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 export const StampData = (props) => {
-    const [name, setName] = useState(props.content.name)
-    const [year, setYear] = useState(props.content.published)
-    const [stamped, setStamped] = useState(props.content.stamped)
-    const [price, setPrice] = useState(props.content.price)
-    const [country, setCountry] = useState(props.content.country)
+    const [name]    = useState(props.content.name)
+    const [year]    = useState(props.content.published)
+    const [stamped] = useState(props.content.stamped)
+    const [price]   = useState(props.content.price)
+    const [country] = useState(props.content.country)
 
     return(<Container className="stamp-data p-0">
         <Row className="g-0 stamp-data-title">
@@ -39,7 +39,7 @@ export const StampData = (props) => {
         </Row>}
         {price &&
         <Row className="g-0 stamp-data-entry">
-            <Col>{price}&euro;</Col>
+            <Col>{price.toFixed(2)}&euro;</Col>
         </Row>}
 
         {country &&

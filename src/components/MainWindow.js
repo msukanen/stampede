@@ -25,7 +25,7 @@ export const MainWindow = (props) => {
                         rowSlice.map(stampObj => {
                             i++
                             return <Col key={`col-${i}}`}>
-                                <StampContainer content={stampObj} />
+                                <StampContainer content={stampObj} cols={numCols} />
                             </Col>
                         })
                 }</Row>

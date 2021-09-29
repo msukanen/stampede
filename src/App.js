@@ -4,13 +4,21 @@ import Header from './components/Header'
 import MainWindow from './components/MainWindow'
 import { stampCollection } from './modules/DataManager'
 import { Container, Row, Col } from 'react-bootstrap'
+import AboutWindow from './components/AboutWindow'
+import SummaryWindow from './components/SummaryWindow'
 
 export const App = () => {
 	const [numCols, setNumCols] = useState(1)
+	const [stage, setStage] = useState('mainWindow')
 
 	useEffect(() => {
 		setNumCols(numCols)
-	}, [numCols])
+		setStage(stage)
+	}, [numCols, stage])
+
+	const showList    = ()=> setStage('mainWindow')
+	const showSummary = ()=> setStage('summaryWindow')
+	const showAbout   = ()=> setStage('aboutWindow')
 
 	return (
 		<Container className="p-0 App" fluid>
@@ -28,7 +36,29 @@ export const App = () => {
 					</Container>
 					Consequat tempor anim amet laborum. Ullamco consectetur adipisicing commodo minim voluptate culpa. Voluptate laborum cupidatat et officia sint enim exercitation fugiat velit. Pariatur laboris officia consectetur eiusmod quis. In nostrud sunt Lorem nulla voluptate cupidatat officia veniam. Id sint aliqua cillum proident veniam nulla laboris labore veniam sit enim quis laborum nisi. Anim reprehenderit magna velit sit irure proident culpa.
 				</Col>
-				<Col><MainWindow collection={stampCollection()} cols={numCols} /></Col>
+				<Col>
+					<Row>
+						<Col xs={1}></Col>
+						<Col>
+							<button onClick={showList}>List</button>
+							||
+							<button onClick={showSummary}>Summary</button>
+							||
+							<button onClick={showAbout}>About</button>
+						</Col>
+						<Col xs={1}></Col>
+					</Row>
+					<Row>
+						<Col>{
+							stage === 'aboutWindow'
+								? <AboutWindow />
+							:stage === 'summaryWindow'
+								? <SummaryWindow />
+							:<MainWindow collection={stampCollection()} cols={numCols} />
+						}
+						</Col>
+					</Row>
+				</Col>
 			</Row>
 		</Container>
 	)
