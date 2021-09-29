@@ -2,24 +2,25 @@ import './AboutWindow.css'
 import { appTitleText } from '../About'
 import { Container } from 'react-bootstrap'
 
-let shakerDirection = 3
-let shakeDelayMS = 1000/20
-let shakeRotate = 0
-let shakeRotatePerTick = 3
+let shakerDirection = 3     // 3 px per step
+let shakeDelayMS = 1000/20  // 1000ms / 20 delay ... ~ 50fps
+let shakeRotate = 0         // initial angle
+let shakeRotatePerTick = 3  // degrees per tick
 
 function shakeItBaby(id1, id2) {
     let elem1 = document.getElementById(id1)
-    let elem2 = document.getElementById(id2)
-    if (elem1 === null || elem1 === undefined || elem2 === null || elem2 === undefined) {
+    // did we get elem corresponding to ID? If not, lets wait a while and try again...
+    //! React puts virtual DOM contents to real DOM whenever it feels like it, so
+    //! we get the ID eventually... if ever... Anyway, crank delay up while waiting
+    //! for the ID to pop up...
+    if (elem1 === null || elem1 === undefined) {
         window.setTimeout(() => shakeItBaby(id1, id2), shakeDelayMS*40)
         return null
     }
     let compCss1 = window.getComputedStyle(elem1)
-    let compCss2 = window.getComputedStyle(elem2)
     elem1.style.paddingLeft = (parseInt(compCss1.paddingLeft)+shakerDirection)+'px'
     elem1.style.transform = 'rotate('+shakeRotate+'deg)'
     elem1.style.transformOrigin = '64px 0'
-    // elem2.style.paddingLeft = (parseInt(compCss2.paddingLeft)-shakerDirection)+'px'
     shakerDirection = -shakerDirection
     if (shakeRotate < 360)
          shakeRotate+= shakeRotatePerTick
