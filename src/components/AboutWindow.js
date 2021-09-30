@@ -38,7 +38,9 @@ export const AboutWindow = () => {
         </p>
         <p>
             Stamps! More Stamps! A
-            <span><div style={{position:'relative'}} id="shake-it-baby">{appTitleText}</div></span> <span id="dont-shake-the-baby">of stamps!</span> And
+            <span><div style={{position:'relative'}}
+                          id="shake-it-baby">{appTitleText}</div></span> <span
+                          id="dont-shake-the-baby">of stamps!</span> And
             yes, that spinning and shaking text is <em>intentionally</em> trying to cause you nausea, irritation, and other funny symptoms
             of nervous breakdown. That's what you get when <b>you find out that your most loved stamp is ruined</b>!
         </p>

@@ -63,7 +63,7 @@ export const App = () => {
 							? <SummaryWindow />
 						:stage === 'updaterWindow'
 							? <UpdateStampWindow objToUpdate={objToUpdate}/>
-						:<MainWindow collection={stampCollection()} cols={numCols} />
+						:<MainWindow collection={stampCollection()} cols={numCols} updater={showUpdater}/>
 					}</Col>
 				</Row>
 			</Col>

@@ -18,7 +18,7 @@ export const StampContainer = (props) => {
         <Collapse in={showFull}>
             <Row className="g-0">
                 <Col style={{width:styleImgWidth, minWidth:styleImgWidth, maxWidth:styleImgWidth}}><StampImg src={content.src} /></Col>
-                <Col><StampData content={content} /></Col>
+                <Col><StampData content={content} updater={props.updater} /></Col>
             </Row>
         </Collapse>
     </Container>)

@@ -1,6 +1,7 @@
 import './StampData.css'
 import { useState, } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Collapse } from 'react-bootstrap'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 export const StampData = (props) => {
     const [name]    = useState(props.content.name)
@@ -10,9 +11,10 @@ export const StampData = (props) => {
     const [country] = useState(props.content.country)
     const [sid]     = useState(props.content.sid)
 
-    return(<Container className="stamp-data p-0">
-        <Row className="g-0 stamp-data-title">
+    return(<Container className="stamp-data">
+        <Row className="stamp-data-title">
             <Col>Name</Col>
+            <Col>            {props.updater && <a href="./#" onClick={props.updater}>W</a>}</Col>
         </Row>
         <Row className="g-0 stamp-data-entry">
             <Col>{name}</Col>
