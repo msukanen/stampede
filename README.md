@@ -1,4 +1,4 @@
-# It's a STAMPEDE!
+# It's a [STAMPEDE](https://msukanen.github.io/stampede)!
 
 Well, if being serious, this is a demo app about stamp collecting.
 
